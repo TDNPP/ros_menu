@@ -16,9 +16,9 @@ extra_file="/home/${USER}/.extra_bashrc"
 # If the ros version is not assigned, #
 # prompt user which version should be loaded. #
 if [ -z $ros_version ]; then
-    echo "**** Welcome to ADLINK Neuron ROS environment ****"
-    echo "1) ROS1 $ros1_distro Python2"
-    echo "2) ROS2 $ros2_distro Python3"
+    echo "**** Welcome to ADLINK NeuronBot2 environment ****"
+    echo "1) ROS1 $ros1_distro NeuronBot2 env"
+    echo "2) ROS2 $ros2_distro NeuronBot2 env"
     echo "3) ROS2-1 Bridge"
     echo "4) Do nothing"
     echo -n "Please choose an option 1-4: "
@@ -33,10 +33,10 @@ echo "**************************************************"
 if [ "$ros_version" '==' "1" ];
 then
     # for ROS1 #
-    echo "Loading ROS1 $ros1_distro Python2 ..."
+    echo "Loading ROS1 $ros1_distro NeuronBot2 env ..."
     source /opt/ros/$ros1_distro/setup.$shell
-    if [ -f "/home/${USER}/catkin_ws/devel/setup.$shell" ]; then
-        source /home/${USER}/catkin_ws/devel/setup.$shell
+    if [ -f "/home/${USER}/neuronbot2_ros1_ws/devel/setup.$shell" ]; then
+        source /home/${USER}/neuronbot2_ros1_ws/devel/setup.$shell
     fi
     current_ip=$(hostname -I | awk '{print $1}')
     if [ -z $current_ip ]; then
@@ -48,10 +48,10 @@ elif [ "$ros_version" '==' "2" ];
 then
     # for ROS2 #
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$shell
-    echo "Loading ROS2 $ros2_distro Python3 ..."
+    echo "Loading ROS2 $ros2_distro NeuronBot2 env ..."
     source /opt/ros/$ros2_distro/local_setup.$shell
-    if [ -f "/home/${USER}/ros2_ws/install/local_setup.$shell" ]; then
-        source /home/${USER}/ros2_ws/install/local_setup.$shell
+    if [ -f "/home/${USER}/neuronbot2_ros2_ws/install/local_setup.$shell" ]; then
+        source /home/${USER}/neuronbot2_ros2_ws/install/local_setup.$shell
     fi
 
     # for extra ROS2 settings #
@@ -62,8 +62,8 @@ elif [ "$ros_version" '==' "3" ];
 then
     # ROS1 #
     source /opt/ros/$ros1_distro/setup.$shell
-    if [ -f "/home/${USER}/catkin_ws/devel/setup.$shell" ]; then
-        source /home/${USER}/catkin_ws/devel/setup.$shell
+    if [ -f "/home/${USER}/neuronbot2_ros1_ws/devel/setup.$shell" ]; then
+        source /home/${USER}/neuronbot2_ros1_ws/devel/setup.$shell
     fi
     current_ip=$(hostname -I | awk '{print $1}')
     if [ -z $current_ip ]; then
@@ -76,8 +76,8 @@ then
     echo "Loading ROS2 $ros2_distro Python3 ..."
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$shell
     source /opt/ros/$ros2_distro/local_setup.$shell
-    if [ -f "/home/${USER}/ros2_ws/install/local_setup.$shell" ]; then
-        source /home/${USER}/ros2_ws/install/local_setup.$shell
+    if [ -f "/home/${USER}/neuronbot2_ros2_ws/install/local_setup.$shell" ]; then
+        source /home/${USER}/neuronbot2_ros2_ws/install/local_setup.$shell
     fi
 
     # for extra ROS2 settings #
