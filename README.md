@@ -9,37 +9,36 @@ ADLINK provides ROS dotfiles to make your life easier.
 
 ```sh
 cd ~
-git clone https://github.com/Adlink-ROS/ros_dotfiles.git
+git clone -b neuronbot2 https://github.com/Adlink-ROS/ros_dotfiles.git
 ```
 
 * Install the dotfiles
 
 ```sh
 cd ros_dotfiles
-git checkout v1.0.0
 ./install.sh
 ```
 
 * Next time you open the shell, the terminal will show the following menu.
 
 ```
-**** Welcome to ADLINK Neuron ROS environment ****
-1) ROS1 melodic Python2
-2) ROS2 dashing Python3
+**** Welcome to ADLINK NeuronBot2 environment ****
+1) ROS1 melodic NeuronBot2 env
+2) ROS2 dashing NeuronBot2 env
 3) ROS2-1 Bridge
 4) Do nothing
-Please choose an option 1-4:
+Please choose an option 1-4: 
 ```
 
 * Here is what the menu does for us:
 
-    - `ROS1 melodic Python2`:
+    - `ROS1 melodic NeuronBot2 env`:
         * Setup ROS1 environment.
-        * Setup your package environment which is in `~/catkin_ws`.
+        * Setup your package environment which is in `~/neuronbot2_ros1_ws`.
         * Set the ROS_IP and ROS_MASTER_IP, which is your host IP.
-    - `ROS2 dashing Python3`:
+    - `ROS2 dashing NeuronBot2 env`:
         * Setup ROS2 environment.
-        * Setup your package environment which is in `~/ros2_ws`.
+        * Setup your package environment which is in `~/neuronbot2_ros2_ws`.
         * Setup extra settings and select which DDS you want to use.
     - `ROS2-1 Bridge`:
         * Do all the thing for ROS1 and ROS2.
