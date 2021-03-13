@@ -1,0 +1,19 @@
+after add ssd
+
+# stop docker service
+sudo systemctl stop docker
+
+# edit configuration
+sudo gedit /etc/docker/daemon.json
+
+#add  "graph": "/path/to/your/new/docker/data/directory" to the file
+
+#Copy Existing Docker Data
+sudo rsync -aP /var/lib/docker/ /path/to/your/new/docker/data/directory
+
+# start docker service
+sudo systemctl start docker
+
+sudo rm -fr /var/lib/docker
+
+#end
